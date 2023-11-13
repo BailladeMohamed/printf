@@ -4,11 +4,12 @@
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
 
 int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_porcentage(void);
-int selector(const char *format, va_list args, int printed);
+int selector(const char *format, va_list args, int p_char);
 int print_string(va_list s);
 int _putchar(char c);
 int printf_int(va_list args);
