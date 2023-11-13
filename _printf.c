@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+*_printf - printfs anything
+* @format: the format string
+*
+* Return: number of bytes printed
+*/
+
 int _printf(const char *format, ...) {
     va_list args;
     va_start(args, format);
