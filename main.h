@@ -1,0 +1,15 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+#include <stdarg.h>
+#include <string.h>
+#include <unistd.h>
+
+int _printf(const char *format, ...);
+int print_char(va_list c)
+int print_porcentage(void)
+int selector(const char *format, va_list args, int printed)
+int print_string(va_list s)
+int _putchar(char c);
+
+#endif
