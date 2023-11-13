@@ -6,7 +6,7 @@
  * Return: the number of bytes printed
  */
 
-int (*get_specifier(char *s))(va_list ap, params_t *params)
+int (*get_specifier(char *s))(va_list list, params_t *params)
 
 {
 	specifier_t specifiers[] = {
@@ -48,12 +48,12 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
  * Return: the number of bytes printed
  */
 
-int get_print_func(char *s, va_list ap, params_t *params)
+int get_print_func(char *s, va_list list, params_t *params)
 {
 	int (*f)(va_list, params_t *) = get_specifier(s);
 
 	if (f)
-		return (f(ap, params));
+		return (f(list, params));
 	return (0);
 }
 
@@ -120,14 +120,14 @@ int get_modifier(char *s, params_t *params)
  * Return: new pointer
  */
 
-char *get_width(char *s, params_t *params, va_list ap)
+char *get_width(char *s, params_t *params, va_list list)
 	/* should this function use char **s and modify the pointer? */
 {
 	int d = 0;
 
 	if (*s == '*')
 	{
-		d = va_arg(ap, int);
+		d = va_arg(list, int);
 		s++;
 	}
 	else
