@@ -1,45 +1,44 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 int _printf(const char *format, ...) {
     va_list args;
     va_start(args, format);
 
-    int numb = 0; 
-  
+    int count = 0; 
+
     while (*format) {
         if (*format == '%') {
-            format++; // Move past '%'
+            format++;
+            
             switch (*format) {
                 case 'c':
-                    num += putchar(va_arg(args, int));
+                    count += putchar(va_arg(args, int));
                     break;
-                case 's': {
-                    const char *str = va_arg(args, const char *);
-                    while (*str) {
-                        numb += putchar(*str);
-                        str++;
-                    }
+                case 's':
+                    count += printf("%s", va_arg(args, char *));
                     break;
-                }
-                case 'd':
-                case 'i': {
-                    int num = va_arg(args, int);
-                    numb += printf("%d", num);
-                    break;
-                }
                 case '%':
-                    numb += putchar('%');
+                    count += putchar('%');
                     break;
                 default:
-                    numb += putchar('%'); // Print the '%' character if an unsupported specifier is encountered
+                   
+                    count += putchar('%');
+                    count += putchar(*format);
                     break;
             }
         } else {
-            numb += putchar(*format);
+            count += putchar(*format);
         }
+
         format++;
     }
 
     va_end(args);
-    return numb;
+    return count;
+}
+
+int main() {
+    _printf("Hello, %s! The answer is %d%%. Character: %c\n", "world", 42, 'A');
+    return 0;
 }
