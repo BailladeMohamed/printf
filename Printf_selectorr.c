@@ -28,6 +28,8 @@ int selector(const char *format, va_list args, int p_char)
 			p_char++;
 			break;
 		default:
+			p_char += _putchar('%');
+			p_char += _putchar(*format);
 			break;
 	}
 
