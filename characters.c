@@ -7,10 +7,10 @@
  *
  * Return: number chars printed
  */
-int print_char(va_list ap, params_t *params)
+int print_char(va_list ist, params_t *params)
 {
 	char pad_char = ' ';
-	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
+	unsigned int pad = 1, sum = 0, ch = va_arg(list, int);
 
 	if (params->minus_flag)
 		sum += _putchar(ch);
@@ -28,16 +28,16 @@ int print_char(va_list ap, params_t *params)
  *
  * Return: number chars printed
  */
-int print_int(va_list ap, params_t *params)
+int print_int(va_list list, params_t *params)
 {
 	long l;
 
 	if (params->l_modifier)
-		l = va_arg(ap, long);
+		l = va_arg(list, long);
 	else if (params->h_modifier)
-		l = (short int)va_arg(ap, int);
+		l = (short int)va_arg(list, int);
 	else
-		l = (int)va_arg(ap, int);
+		l = (int)va_arg(list, int);
 	return (print_number(convert(l, 10, 0, params), params));
 }
 
@@ -48,9 +48,9 @@ int print_int(va_list ap, params_t *params)
  *
  * Return: number chars printed
  */
-int print_string(va_list ap, params_t *params)
+int print_string(va_list list, params_t *params)
 {
-	char *str = va_arg(ap, char *), pad_char = ' ';
+	char *str = va_arg(list, char *), pad_char = ' ';
 	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
@@ -90,9 +90,9 @@ int print_string(va_list ap, params_t *params)
  *
  * Return: number chars printed
  */
-int print_percent(va_list ap, params_t *params)
+int print_percent(va_list list, params_t *params)
 {
-	(void)ap;
+	(void)list;
 	(void)params;
 	return (_putchar('%'));
 }
@@ -104,9 +104,9 @@ int print_percent(va_list ap, params_t *params)
  *
  * Return: number chars printed
  */
-int print_S(va_list ap, params_t *params)
+int print_S(va_list list, params_t *params)
 {
-	char *str = va_arg(ap, char *);
+	char *str = va_arg(list, char *);
 	char *hex;
 	int sum = 0;
 
