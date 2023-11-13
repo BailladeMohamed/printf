@@ -44,16 +44,16 @@ char *convert(long int num, int base, int flags, params_t *params)
  *
  * Return: bytes printed
  */
-int print_unsigned(va_list ap, params_t *params)
+int print_unsigned(va_list list, params_t *params)
 {
 	unsigned long l;
 
 	if (params->l_modifier)
-		l = (unsigned long)va_arg(ap, unsigned long);
+		l = (unsigned long)va_arg(list, unsigned long);
 	else if (params->h_modifier)
-		l = (unsigned short int)va_arg(ap, unsigned int);
+		l = (unsigned short int)va_arg(list, unsigned int);
 	else
-		l = (unsigned int)va_arg(ap, unsigned int);
+		l = (unsigned int)va_arg(list, unsigned int);
 	params->unsign = 1;
 	return (print_number(convert(l, 10, CONVERT_UNSIGNED, params), params));
 }
@@ -65,9 +65,9 @@ int print_unsigned(va_list ap, params_t *params)
  *
  * Return: bytes printed
  */
-int print_address(va_list ap, params_t *params)
+int print_address(va_list list, params_t *params)
 {
-	unsigned long int n = va_arg(ap, unsigned long int);
+	unsigned long int n = va_arg(list, unsigned long int);
 	char *str;
 
 	if (!n)
