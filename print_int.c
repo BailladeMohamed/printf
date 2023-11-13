@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * printf_int - prints an integer
  * @args: argument to print
@@ -87,18 +88,4 @@ int printf_dec(va_list args)
 	putchar(last + '0');
 
 	return (i);
-}
-
-/**
- * main - entry point of the program
- *
- * Return: 0 on success
- */
-int main(void)
-{
-	int num = 123;
-
-	printf("Number: %d\n", num);
-
-	return (0);
 }
