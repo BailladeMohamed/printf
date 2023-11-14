@@ -10,8 +10,9 @@ int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_porcentage(void);
 int selector(const char *format, va_list args, int p_char);
-int print_string(va_list s);
+int print_string(va_list args, int p_char);
 int _putchar(char c);
+
 int printf_int(va_list args);
 int printf_dec(va_list args);
 

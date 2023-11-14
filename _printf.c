@@ -1,45 +1,42 @@
 #include "main.h"
 
 /**
- * _printf - our printf function
- * @format: The format string
- * 
- * Return: The number of characters printed
+ * _printf - implementaation of a built-in printf func
+ * @format: format specifier str
+ * Return: number of characters priinted
  */
 int _printf(const char *format, ...)
 {
-va_list args;
-int p_char = 0;
-char ch;
+	int p_char = 0;
+	va_list args;
 
-if (format == NULL)
-return (-1);
+	if (format == NULL)
+	{
+		va_end(args);
+		return (-1);
+	}
 
-va_start(args, format);
+	va_start(args, format);
 
-while (*format != '\0')
-{
-if (*format == '%')
-{
-format++;
-if (*format == '\0')
-{
-va_end(args);
-return (-1);
-}
-/* Handle format specifiers */
-format++;
-}
-else
-{
-ch = *format;
-write(1, &ch, 1);
-p_char++;
-format++;
-}
-}
-
-va_end(args);
-
-return (p_char);
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
+			format++;
+			if (*format == '\0')
+			{
+				va_end(args);
+				return (-1);
+			}
+			p_char = selector(format, args, p_char);
+			format++;
+		}
+		else
+		{
+			p_char += _putchar(*format);
+			format++;
+		}
+	}
+	va_end(args);
+	return (p_char);
 }
