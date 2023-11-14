@@ -27,7 +27,6 @@ int selector(const char *format, va_list args, int p_char)
 	default:
 		_putchar('%');
 		_putchar(*format);
-		p_char += 2;
 		break;
 	}
 	return (p_char);
