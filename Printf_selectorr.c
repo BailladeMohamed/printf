@@ -13,7 +13,7 @@ int my_selector(const char *format, va_list args, int p_char)
 	{
 		case 'd':
 		case 'i':
-			p_char = printf_integer(args, p_char);
+			p_char = printf_int(args, p_char);
 			break;
 		case 'c':
 			_putchar(va_arg(args, int));

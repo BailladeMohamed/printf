@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * printf_integer - it prints an integer number
+ * printf_int - it prints an integer number
  * @args: number args containing the int to print
  * @p_char: it counts of printed characters
  * Return: count of printed chars
  */
 
-int printf_integer(va_list args, int p_char)
+int printf_int(va_list args, int p_char)
 {
 	long  num = va_arg(args, int);
 	int digits = 0;
