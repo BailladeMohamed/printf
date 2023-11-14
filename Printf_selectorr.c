@@ -20,7 +20,7 @@ int my_selector(const char *format, va_list args, int p_char)
 			p_char++;
 			break;
 		case 's':
-			p_char = printf_string(args, p_char);
+			p_char = printf_strng(args, p_char);
 			break;
 		case '%':
 			_putchar('%');

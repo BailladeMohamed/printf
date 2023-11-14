@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * printf_string - it prints a str
+ * printf_strng - it prints a str
  * @args: List of args containing the strg to print
  * @p_char: nums of chars printed so far
  * Return: an uppdated count of printed chars
  */
-int printf_string(va_list args, int p_char)
+int printf_strng(va_list args, int p_char)
 {
 	char *str = va_arg(args, char *);
 
