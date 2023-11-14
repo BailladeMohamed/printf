@@ -1,3 +1,3 @@
 * PROJECT : Printf 0x11.C
-* CONTRIBUTORS : BailladeMohamed, honeybadger050
+* CONTRIBUTORS : BailladeMohamed, honeybadger05
 
