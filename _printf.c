@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				va_end(args);
 				return (-1);
 			}
-			p_char = selector(format, args, p_char);
+			p_char = my_selector(format, args, p_char);
 			format++;
 		}
 		else
