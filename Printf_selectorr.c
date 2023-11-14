@@ -29,13 +29,6 @@ int selector(const char *format, va_list args, int printed)
 		case 'b':
 			printed = printf_binary(va_arg(args, unsigned int), printed);
 			break;
-		case 'x':
-		case 'X':
-			printed = (int)((*format == 'X') ? 1 : 0);
-			break;
-		case 'o':
-			printed = printf_octal(va_arg(args, unsigned int), printed);
-			break;
 		case 'r':
 			printed = printf_reverse(args, printed);
 			break;
