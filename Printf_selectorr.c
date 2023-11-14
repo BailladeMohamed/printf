@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * selector - selects the apropriate format func based on the specifier
+ * my_selector - selects the apropriate format func
  * @format: format specifier
  * @args: List of args
  * @p_char: nums of chars printed so far
  * Return: an updated count of printed chars
  */
-int selector(const char *format, va_list args, int p_char)
+int my_selector(const char *format, va_list args, int p_char)
 {
 	switch (*format)
 	{

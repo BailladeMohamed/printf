@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * printf_char - it prints a char
- * @args: a list of arguments containing the char to print
+ * my_printf_char - my personal func that prints a char
+ * @args: arguments containing the char to print
  * @p_char: number of char printed so far
  * Return: an uppdated count of printed characters
  */
-int printf_char(va_list args, int p_char)
+int my_printf_char(va_list args, int p_char)
 {
 	char character = va_arg(args, int);
 
