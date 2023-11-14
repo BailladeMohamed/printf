@@ -25,8 +25,8 @@ int selector(const char *format, va_list args, int p_char)
 		p_char += printf_integer(args, p_char);
 		break;
 	default:
-		_putchar('%');
-		_putchar(*format);
+		p_char += _putchar('%');
+		p_char += _putchar(*format);
 		break;
 	}
 	return (p_char);
