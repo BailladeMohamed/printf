@@ -12,7 +12,7 @@ int my_printf_char(va_list args, int p_char);
 int printf_string(va_list args, int p_char);
 int printf_int(va_list args, int p_char);
 int my_selector(const char *format, va_list args, int p_char);
-int printf_binary(unsigned int num, int p_char);
+int printf_bina(unsigned int num, int p_char);
 int _printf(const char *format, ...);
 int _x(unsigned int num, int p_char, int uppercase);
 int Printf_mo(int p_char);

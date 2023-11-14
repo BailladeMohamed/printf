@@ -27,7 +27,7 @@ int my_selector(const char *format, va_list args, int p_char)
 			p_char++;
 			break;
 		case 'b':
-			p_char = printf_binary(va_arg(args, unsigned int), p_char);
+			p_char = printf_bina(va_arg(args, unsigned int), p_char);
 			break;
 		default:
 			p_char += _putchar('%');
