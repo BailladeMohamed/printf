@@ -1,2 +1,3 @@
-* Project : Printf 0x11.c
-*GROUP PROJECT : although i did it all by myself!!
+* Project : Printf 0x11.C
+PROJECT : although i did it all by myself!!
+
