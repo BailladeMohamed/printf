@@ -2,12 +2,12 @@
 
 /**
  * Printf_modulus_operator - Print a modulus operator
- * @printed: Number of characters printed so far
- * Return: The updated count of printed characters
+ * @p_char: nums of chars printed so far
+ * Return: An updated count of printed chars
  */
 
-int Printf_modulus_operator(int printed)
+int Printf_modulus_operator(int p_char)
 {
 _putchar('%');
-return (printed + 1);
+return (p_char + 1);
 }

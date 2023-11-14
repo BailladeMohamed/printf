@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * printf_integer - Prints an integer number
- * @args: Number arguments containing the integer to print
- * @printed: Count of printed characters
- * Return: Count of printed characters
+ * printf_integer - it prints an integer number
+ * @args: number args containing the int to print
+ * @p_char: it counts of printed characters
+ * Return: count of printed chars
  */
 
-int printf_integer(va_list args, int printed)
+int printf_integer(va_list args, int p_char)
 {
 	long  num = va_arg(args, int);
 	int digits = 0;
@@ -16,7 +16,7 @@ int printf_integer(va_list args, int printed)
 
 	if (num < 0)
 	{
-		printed += _putchar('-');
+		p_char += _putchar('-');
 		num = -num;
 
 		temp = num;
@@ -37,9 +37,9 @@ int printf_integer(va_list args, int printed)
 			pow10 *= 10;
 		}
 		digit = num / pow10;
-		printed += _putchar(digit + '0');
+		p_char += _putchar(digit + '0');
 		num -= digit * pow10;
 		digits--;
 	}
-	return (printed);
+	return (p_char);
 }
