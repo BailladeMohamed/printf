@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _printf - implementaation of a built-in printf func
- * @format: format specifier str
- * Return: number of characters priinted
+ * _printf - Implementation of the built-in printf function
+ * @format: The format specifier string
+ * Return: The number of characters printed
  */
 int _printf(const char *format, ...)
 {
-	int p_char = 0;
+	int printed = 0;
 	va_list args;
 
 	if (format == NULL)
@@ -28,15 +28,16 @@ int _printf(const char *format, ...)
 				va_end(args);
 				return (-1);
 			}
-			p_char = selector(format, args, p_char);
+			printed = selector(format, args, printed);
 			format++;
 		}
 		else
 		{
-			p_char += _putchar(*format);
+			_putchar(*format);
+			printed++;
 			format++;
 		}
 	}
 	va_end(args);
-	return (p_char);
+	return (printed);
 }

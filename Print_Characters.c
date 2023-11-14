@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * print_char - writes the character c to stdout
- * @c: The character to print
- *
- * Return: The number of characters printed
+ * printf_char - This will print a character
+ * @args: List of arguments containing the character to print
+ * @printed: Number of characters printed so far
+ * Return: The updated count of printed characters
  */
-int print_char(va_list c)
+int printf_char(va_list args, int printed)
 {
-	char ch = (char)va_arg(c, int);
+	char character = va_arg(args, int);
 
-	write(1, &ch, 1);
-	return (1);
+	_putchar(character);
+	return (printed + 1);
 }

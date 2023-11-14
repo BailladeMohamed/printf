@@ -1,13 +1,12 @@
 #include "main.h"
 
 /**
- * print_string - This function prints a string
+ * printf_string - this will print a string
  * @args: List of arguments containing the string to print
- * @p_char: Number of characters printed so far
- *
+ * @printed: Number of characters printed so far
  * Return: The updated count of printed characters
  */
-int print_string(va_list args, int p_char)
+int printf_string(va_list args, int printed)
 {
 	char *str = va_arg(args, char *);
 
@@ -17,9 +16,9 @@ int print_string(va_list args, int p_char)
 	while (*str != '\0')
 	{
 		_putchar(*str);
-		p_char++;
+		printed++;
 		str++;
 	}
 
-	return (p_char);
+	return (printed);
 }

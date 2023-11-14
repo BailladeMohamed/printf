@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- * print_porcentage - %
- *
- * Return: The number of characters printed
+ * Printf_modulus_operator - Print a modulus operator
+ * @printed: Number of characters printed so far
+ * Return: The updated count of printed characters
  */
-int print_porcentage(void)
+
+int Printf_modulus_operator(int printed)
 {
-	_putchar('%');
-	return (1);
+_putchar('%');
+return (printed + 1);
 }
