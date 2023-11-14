@@ -13,8 +13,7 @@ int selector(const char *format, va_list args, int p_char);
 int print_string(va_list args, int p_char);
 int _putchar(char c);
 
-int printf_int(va_list args);
+int printf_integer(va_list args, int p_char);
 int printf_dec(va_list args);
-
 
 #endif

@@ -22,7 +22,7 @@ int selector(const char *format, va_list args, int p_char)
 		break;
 	case 'd':
 	case 'i':
-		p_char += printf_int(args);
+		p_char += printf_integer(args, p_char);
 		break;
 	default:
 		_putchar('%');
